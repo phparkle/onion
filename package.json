@@ -2,11 +2,23 @@
   "name": "onion",
   "version": "0.0.1",
   "description": "Automatic CSS classes on transition and animation events",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "type": "module",
+  "source": "src/onion.ts",
+  "exports": {
+    "require": "./dist/onion.cjs",
+    "default": "./dist/onion.modern.js"
   },
-  "keywords": [],
+  "main": "./dist/onion.cjs",
+  "module": "./dist/onion.module.js",
+  "unpkg": "./dist/foo.umd.js",
+
+  "scripts": {
+    "build": "microbundle",
+    "start": "microbundle watch"
+  },
   "author": "Parkle Lee <phparkle@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "microbundle": "^0.15.1"
+  }
 }

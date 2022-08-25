@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "source": "src/index.html",
+  "scripts": {
+    "start": "parcel"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.7.0",
+    "parcel": "^2.7.0"
+  }
+}
