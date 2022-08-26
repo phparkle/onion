@@ -2,9 +2,11 @@
 
 Toggle elements with CSS transitions and animations the easy way.
 
+This library addresses the issue of not being able to transition/animate while toggling the display property of an element. See here for a full explanation: https://www.impressivewebs.com/animate-display-block-none/
+
 ## Features
 
-- Toggles `is-open`, `is-opening` and `is-closing` classes at the exact right times to ensure that CSS transitions and animations can be used while toggling `display: none`
+- Toggles `is-open`, `is-opening` and `is-closing` classes at the exact right times to ensure that CSS transitions and animations can be used while toggling `display: none;`
 - Supports custom CSS classes for easy integration with CSS animation libraries such as [animate.css](https://animate.style/)
 - Handles rapid toggling properly by aborting any ongoing animations/transitions
 - Has built-in timeout in case of CSS transitions/animations
