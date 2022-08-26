@@ -1,6 +1,6 @@
 {
   "name": "onion",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Toggle elements with CSS transitions and animations the easy way.",
   "type": "module",
   "source": "src/onion.ts",
