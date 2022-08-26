@@ -1,6 +1,6 @@
 {
   "name": "onion",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Automatic CSS classes on transition and animation events",
   "type": "module",
   "source": "src/onion.ts",
