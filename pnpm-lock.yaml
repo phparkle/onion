@@ -2560,13 +2560,13 @@ packages:
       rollup-plugin-bundle-size: 1.0.3
       rollup-plugin-postcss: 4.0.2_postcss@8.4.16
       rollup-plugin-terser: 7.0.2_rollup@2.78.1
-      rollup-plugin-typescript2: 0.32.1_accrhai6qopda76wnqb3pkewpq
+      rollup-plugin-typescript2: 0.32.1_rusrl3yqfuqle4tcyjzane2tmq
       rollup-plugin-visualizer: 5.8.0_rollup@2.78.1
       sade: 1.8.1
       terser: 5.15.0
       tiny-glob: 0.2.9
       tslib: 2.4.0
-      typescript: 4.7.4
+      typescript: 4.8.2
     transitivePeerDependencies:
       - '@types/babel__core'
       - supports-color
@@ -3288,7 +3288,7 @@ packages:
       terser: 5.15.0
     dev: true
 
-  /rollup-plugin-typescript2/0.32.1_accrhai6qopda76wnqb3pkewpq:
+  /rollup-plugin-typescript2/0.32.1_rusrl3yqfuqle4tcyjzane2tmq:
     resolution: {integrity: sha512-RanO8bp1WbeMv0bVlgcbsFNCn+Y3rX7wF97SQLDxf0fMLsg0B/QFF005t4AsGUcDgF3aKJHoqt4JF2xVaABeKw==}
     peerDependencies:
       rollup: '>=1.26.3'
@@ -3300,7 +3300,7 @@ packages:
       resolve: 1.22.1
       rollup: 2.78.1
       tslib: 2.4.0
-      typescript: 4.7.4
+      typescript: 4.8.2
     dev: true
 
   /rollup-plugin-visualizer/5.8.0_rollup@2.78.1:
@@ -3546,8 +3546,8 @@ packages:
     resolution: {integrity: sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==}
     dev: true
 
-  /typescript/4.7.4:
-    resolution: {integrity: sha512-C0WQT0gezHuw6AdY1M2jxUO83Rjf0HP7Sk1DtXj6j1EwkQNZrHAg2XPWlq62oqEhYvONq5pkC2Y9oPljWToLmQ==}
+  /typescript/4.8.2:
+    resolution: {integrity: sha512-C0I1UsrrDHo2fYI5oaCGbSejwX4ch+9Y5jTQELvovfmFkK3HHSZJB8MSJcWLmCUBzQBchCrZ9rMRV6GuNrvGtw==}
     engines: {node: '>=4.2.0'}
     hasBin: true
     dev: true
