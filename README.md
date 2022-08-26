@@ -1,8 +1,8 @@
-# Onion
+# Onion🧅
 
 Toggle elements with CSS transitions and animations the easy way.
 
-This library addresses the issue of not being able to transition/animate while toggling the display property of an element. See here for a full explanation: https://www.impressivewebs.com/animate-display-block-none/
+This library addresses the issue of not being able to transition/animate an element while toggling the display property at the same time. See here for a full explanation: https://www.impressivewebs.com/animate-display-block-none/
 
 ## Features
 
