@@ -8,6 +8,7 @@ Toggle elements with CSS transitions and animations the easy way.
 - Supports custom CSS classes for easy integration with CSS animation libraries such as [animate.css](https://animate.style/)
 - Handles rapid toggling properly by aborting any ongoing animations/transitions
 - Has built-in timeout in case of CSS transitions/animations
+- Written in TypeScript
 
 ## Installation
 
@@ -54,7 +55,7 @@ Self-hosted
 
 ## Usage
 
-See `example` directory for full example.
+See `/example` for a more detailed example.
 
 #### HTML
 
@@ -93,6 +94,29 @@ toggle.addEventListener("click", function() {
 });
 ```
 
+## How it works
+
+Onion does not ship with any CSS styles. You should add your own stylesheet to make it work.
+
+#### 1. Default styles
+
+You should add `display: none;` to the element by default.
+
+#### 2. is-open
+
+The `is-open` class is added when the element is shown. You should override the default `display: none;` with `display: block;`, for example.
+
+#### 3. is-opening
+
+The `is-opening` class is added on the next event cycle after `is-open` is added. A CSS transition or animation should be added to this class. The 1-cycle delay ensures that the transition/animation can be played immediately after `display: none;` is removed.
+
+Note: `is-opening` is kept on the element until it is closing.
+
+#### 4. is-closing
+
+The `is-closing` class is added when the element is hiding. A CSS transition or animation should be added to this class. The `is-open` class will not be removed until the transition or animation ends.
+
+
 ## API Reference
 
 #### Show an element
@@ -101,14 +125,33 @@ toggle.addEventListener("click", function() {
 onion.show(el, token?);
 ```
 
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| `el` | `HTMLElement` | The element to be shown |
+| `token` | `string` | Optional. A custom class to be added while opening |
+
 #### Hide an element
 
 ```js
 onion.hide(el, token?);
 ```
 
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| `el` | `HTMLElement` | The element to be hidden |
+| `token` | `string` | Optional. A custom class to be added while closing |
+
 #### Toggle an element
 
 ```js
 onion.toggle(el, force?, openingToken?, closingToken?);
 ```
+
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| `el` | `HTMLElement` | The element to be toggled |
+| `force` | `boolean` | Optional. If true, the element will be shown. Otherwise, it will be hidden. |
+| `openingToken` | `string` | Optional. A custom class to be added while opening |
+| `closingToken` | `string` | Optional. A custom class to be added while closing |
+
+Note: you can pass `undefined` to skip an optional argument.
