@@ -89,7 +89,7 @@ const toggle = document.querySelector(".toggle");
 const box = document.querySelector(".box");
 
 toggle.addEventListener("click", function() {
-  onion.toggle(el);
+  onion.toggle(box);
 });
 ```
 
