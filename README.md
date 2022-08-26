@@ -105,7 +105,7 @@ Onion does not ship with any CSS styles. You should add your own stylesheet to m
 
 #### 1. Default styles
 
-You should add `display: none;` to the element by default.
+You should add `display: none;` to the element by default, as well as any styles for the initial closed state.
 
 #### 2. is-open
 
