@@ -3,7 +3,12 @@ interface OnionElement extends HTMLElement {
         abort: () => void;
     };
 }
-export declare function show(el: OnionElement): void;
-export declare function hide(el: OnionElement): void;
-export declare function toggle(el: OnionElement, force?: boolean): void;
-export {};
+declare function show(el: OnionElement, token?: string): void;
+declare function hide(el: OnionElement, token?: string): void;
+declare function toggle(el: OnionElement, force?: boolean, openingToken?: string, closingToken?: string): void;
+declare const _default: {
+    show: typeof show;
+    hide: typeof hide;
+    toggle: typeof toggle;
+};
+export default _default;

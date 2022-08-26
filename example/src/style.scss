@@ -4,24 +4,39 @@
 
 .stage {
   padding: 50px;
+  display: grid;
+  gap: 50px;
 }
 
 .box {
   background: black;
   color: white;
-  font-size: 24px;
-  opacity: 0;
+  font-size: 24px;  
+  display: none;
 
-  &.is-closed {
-    display: none;
+  &.is-open {
+    display: block;
   }
 
-  &.is-open:not(.is-closing) {
-    animation: fade-in 0.7s ease-out forwards;
+  &--transition {
+    transition: all 0.7s ease-out;
+    opacity: 0;
+
+    &.is-opening {
+      opacity: 1;
+    }  
   }
 
-  &.is-closing {
-    animation: fade-out 0.7s ease-out;
+  &--animation {
+    opacity: 0;
+
+    &.is-opening {
+      animation: fade-in 0.7s ease-out forwards;
+    }
+
+    &.is-closing {
+      animation: fade-out 0.7s ease-out;
+    }
   }
 
   &__content {

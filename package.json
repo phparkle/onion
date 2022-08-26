@@ -9,16 +9,17 @@
     "default": "./dist/onion.modern.js"
   },
   "main": "./dist/onion.cjs",
+  "types": "./dist/onion.d.ts",
   "module": "./dist/onion.module.js",
   "unpkg": "./dist/foo.umd.js",
-
   "scripts": {
-    "build": "microbundle",
-    "start": "microbundle watch"
+    "build": "rimraf dist && microbundle",
+    "start": "rimraf dist && microbundle watch"
   },
   "author": "Parkle Lee <phparkle@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "microbundle": "^0.15.1"
+    "microbundle": "^0.15.1",
+    "rimraf": "^3.0.2"
   }
 }

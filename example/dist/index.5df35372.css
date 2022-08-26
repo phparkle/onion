@@ -1,0 +1,2 @@
+*{box-sizing:border-box}.stage{gap:50px;padding:50px;display:grid}.box{color:#fff;background:#000;font-size:24px;display:none}.box.is-open{display:block}.box--transition{opacity:0;transition:all .7s ease-out}.box--transition.is-opening{opacity:1}.box--animation{opacity:0}.box--animation.is-opening{animation:fade-in .7s ease-out forwards}.box--animation.is-closing{animation:fade-out .7s ease-out}.box__content{padding:20px}@keyframes fade-in{0%{opacity:0}to{opacity:1}}@keyframes fade-out{0%{opacity:1}to{opacity:0}}
+/*# sourceMappingURL=index.5df35372.css.map */

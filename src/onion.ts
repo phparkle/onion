@@ -9,7 +9,9 @@ interface ClassList {
 }
 
 function setClasses(el: Element, classes: ClassList) {
-  Object.entries(classes).forEach(([key, value]) => el.classList.toggle(key, value));
+  Object.entries(classes)
+    .filter(([key]) => key.length)
+    .forEach(([key, value]) => el.classList.toggle(key, value));
 }
 
 function addEndListener(el: Element, listener: () => void) {
@@ -22,20 +24,23 @@ function removeEndListener(el: Element, listener: () => void) {
   el.removeEventListener("animationend", listener);
 }
 
-export function show(el: OnionElement) {
+function show(el: OnionElement, token: string = "") {
   if (!(el instanceof HTMLElement)) return;
 
-  if (el.classList.contains("is-open") && !el.classList.contains("is-closing"))
+  if (el.classList.contains("is-opening"))
     return;
 
   el.onion?.abort();
 
+  if (token === "is-opening")
+    token = "";
+
   const handleEnd = () => {
     setClasses(el, {
-      'is-open': true,
-      'is-closed': false,
-      'is-opening': false,
-      'is-closing': false,
+      "is-open": true,
+      "is-opening": true,
+      "is-closing": false,
+      [token]: false,
     });
     el.onion?.abort();
   }
@@ -46,42 +51,44 @@ export function show(el: OnionElement) {
     abort: () => {
       removeEndListener(el, handleEnd);
       clearTimeout(timeoutID);
+      setClasses(el, { [token]: false });
     }
   }
 
   addEndListener(el, handleEnd);
 
   setClasses(el, {
-    'is-open': false,
-    'is-closed': false,
-    'is-opening': false,
-    'is-closing': false,
+    "is-open": true,
+    "is-opening": false,
+    "is-closing": false,
+    [token]: false,
   });
 
-  setTimeout(() => {
-    setClasses(el, {
-      'is-open': true,
-      'is-closed': false,
-      'is-opening': true,
-      'is-closing': false,
-    });
-  });
+  setTimeout(() => setClasses(el, {
+    "is-open": true,
+    "is-opening": true,
+    "is-closing": false,
+    [token]: true,
+  }));
 }
 
-export function hide(el: OnionElement) {
+function hide(el: OnionElement, token: string = "") {
   if (!(el instanceof HTMLElement)) return;
 
-  if (el.classList.contains("is-closed"))
+  if (el.classList.contains("is-closing") || !el.classList.contains("is-open"))
     return;
 
   el.onion?.abort();
 
+  if (token === "is-closing")
+    token = "";
+
   const handleEnd = () => {
     setClasses(el, {
-      'is-open': false,
-      'is-closed': true,
-      'is-opening': false,
-      'is-closing': false,
+      "is-open": false,
+      "is-opening": false,
+      "is-closing": false,
+      [token]: false,
     });
     el.onion?.abort();
   }
@@ -92,32 +99,37 @@ export function hide(el: OnionElement) {
     abort: () => {
       removeEndListener(el, handleEnd);
       clearTimeout(timeoutID);
+      setClasses(el, { [token]: false });
     }
   }
 
   addEndListener(el, handleEnd);
 
   setClasses(el, {
-    'is-open': true,
-    'is-closed': false,
-    'is-opening': false,
-    'is-closing': true,
+    "is-open": true,
+    "is-opening": false,
+    "is-closing": true,
+    [token]: true,
   });
 }
 
-export function toggle(el: OnionElement, force?: boolean) {
+function toggle(el: OnionElement, force?: boolean, openingToken: string = "", closingToken: string = "") {
   if (!(el instanceof HTMLElement)) return;
-
-  el.onion?.abort();
 
   if (typeof force === 'undefined') {
-    if (el.classList.contains('is-open') && !el.classList.contains("is-closing")) {
-      hide(el);
+    if (el.classList.contains('is-opening')) {
+      hide(el, closingToken);
     } else {
-      show(el);
+      show(el, openingToken);
     }
   } else {
-    if (force) show(el);
-    else hide(el);
+    if (force) show(el, openingToken);
+    else hide(el, closingToken);
   }
 }
+
+export default {
+  show,
+  hide,
+  toggle
+};

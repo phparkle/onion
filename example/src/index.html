@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Onion Example</title>
+  <link rel="stylesheet" href="~/node_modules/animate.css/animate.css">
   <link rel="stylesheet" href="style.scss">
 </head>
 <body>
@@ -14,11 +15,16 @@
     <button class="button button--toggle">Toggle</button>
   </div>
   <div class="stage">
-    <div class="box is-closed">
-      <div class="box__content">Lorem ipsum</div>
+    <div class="box box--transition">
+      <div class="box__content">Lorem ipsum transition</div>
+    </div>
+    <div class="box box--animation">
+      <div class="box__content">Lorem ipsum animation</div>
+    </div>
+    <div class="box animate__animated">
+      <div class="box__content">Lorem ipsum animation</div>
     </div>
   </div>
-  <script src="../../dist/onion.umd.js"></script>
-  <script src="index.js"></script>
+  <script src="index.js" type="module"></script>
 </body>
 </html>

@@ -1,11 +1,18 @@
 {
   "private": true,
+  "browserslist": "defaults",
   "source": "src/index.html",
   "scripts": {
-    "start": "parcel"
+    "start": "rimraf dist && parcel",
+    "build": "rimraf dist && parcel build"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.7.0",
-    "parcel": "^2.7.0"
+    "parcel": "^2.7.0",
+    "rimraf": "^3.0.2"
+  },
+  "dependencies": {
+    "animate.css": "^4.1.1",
+    "onion": "link:.."
   }
 }
