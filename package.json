@@ -1,6 +1,6 @@
 {
   "name": "onion",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Toggle elements with CSS transitions and animations the easy way.",
   "homepage": "https://github.com/phparkle/onion#readme",
   "bugs": "https://github.com/phparkle/onion/issues",
