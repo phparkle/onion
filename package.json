@@ -11,7 +11,7 @@
   "main": "./dist/onion.cjs",
   "types": "./dist/onion.d.ts",
   "module": "./dist/onion.module.js",
-  "unpkg": "./dist/foo.umd.js",
+  "unpkg": "./dist/onion.umd.js",
   "files": [
     "src",
     "dist"
