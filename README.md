@@ -2,7 +2,7 @@
 
 ![npm bundle size](https://img.shields.io/bundlephobia/min/onion?style=flat-square)
 
-Toggle elements with CSS transitions and animations the easy way.
+> Toggle elements with CSS transitions and animations the easy way.
 
 This library addresses the issue of not being able to transition/animate an element while toggling the display property at the same time. See here for a full explanation: https://www.impressivewebs.com/animate-display-block-none/
 
@@ -11,7 +11,7 @@ This library addresses the issue of not being able to transition/animate an elem
 - Toggles `is-open`, `is-opening` and `is-closing` classes at the exact right times to ensure that CSS transitions and animations can be used while toggling `display: none;`
 - Supports custom CSS classes for easy integration with CSS animation libraries such as [animate.css](https://animate.style/)
 - Handles rapid toggling properly by aborting any ongoing animations/transitions
-- Has built-in timeout in case of missing CSS transitions/animations
+- Has built-in 2 second timeout in case of missing CSS transition/animation
 - Written in TypeScript
 
 ## Installation
