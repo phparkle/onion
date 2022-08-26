@@ -12,6 +12,7 @@ This library addresses the issue of not being able to transition/animate an elem
 - Supports custom CSS classes for easy integration with CSS animation libraries such as [animate.css](https://animate.style/)
 - Handles rapid toggling properly by aborting any ongoing animations/transitions
 - Has built-in 2 second timeout in case of missing CSS transition/animation
+- Ignores bubbled transition/animation events
 - Written in TypeScript
 
 ## Installation
