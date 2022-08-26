@@ -11,7 +11,7 @@ This library addresses the issue of not being able to transition/animate an elem
 - Toggles `is-open`, `is-opening` and `is-closing` classes at the exact right times to ensure that CSS transitions and animations can be used while toggling `display: none;`
 - Supports custom CSS classes for easy integration with CSS animation libraries such as [animate.css](https://animate.style/)
 - Handles rapid toggling properly by aborting any ongoing animations/transitions
-- Has built-in timeout in case of CSS transitions/animations
+- Has built-in timeout in case of missing CSS transitions/animations
 - Written in TypeScript
 
 ## Installation
