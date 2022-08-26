@@ -1,7 +1,7 @@
 {
   "name": "onion",
   "version": "0.1.0",
-  "description": "Automatic CSS classes on transition and animation events",
+  "description": "Toggle elements with CSS transitions and animations the easy way.",
   "type": "module",
   "source": "src/onion.ts",
   "exports": {
@@ -12,6 +12,10 @@
   "types": "./dist/onion.d.ts",
   "module": "./dist/onion.module.js",
   "unpkg": "./dist/foo.umd.js",
+  "files": [
+    "src",
+    "dist"
+  ],
   "scripts": {
     "build": "rimraf dist && microbundle",
     "start": "rimraf dist && microbundle watch"
