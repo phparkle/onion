@@ -1,6 +1,6 @@
 interface OnionElement extends HTMLElement {
   onion?: {
-    abort: () => void;
+    abort?: () => void;
   }
 }
 
@@ -30,7 +30,7 @@ function show(el: OnionElement, token: string = "") {
   if (el.classList.contains("is-opening"))
     return;
 
-  el.onion?.abort();
+  el.onion?.abort?.();
 
   if (token === "is-opening")
     token = "";
@@ -44,18 +44,19 @@ function show(el: OnionElement, token: string = "") {
       "is-closing": false,
       [token]: false,
     });
-    el.onion?.abort();
+    el.onion?.abort?.();
   }
 
   const timeoutID = setTimeout(handleEnd, 2000);
 
-  el.onion = {
+  el.onion = Object.assign(el.onion || {}, {
     abort: () => {
       removeEndListener(el, handleEnd);
       clearTimeout(timeoutID);
       setClasses(el, { [token]: false });
+      delete el.onion?.abort;
     }
-  }
+  });
 
   addEndListener(el, handleEnd);
 
@@ -80,7 +81,7 @@ function hide(el: OnionElement, token: string = "") {
   if (el.classList.contains("is-closing") || !el.classList.contains("is-open"))
     return;
 
-  el.onion?.abort();
+  el.onion?.abort?.();
 
   if (token === "is-closing")
     token = "";
@@ -94,18 +95,19 @@ function hide(el: OnionElement, token: string = "") {
       "is-closing": false,
       [token]: false,
     });
-    el.onion?.abort();
+    el.onion?.abort?.();
   }
 
   const timeoutID = setTimeout(handleEnd, 2000);
 
-  el.onion = {
+  el.onion = Object.assign(el.onion || {}, {
     abort: () => {
       removeEndListener(el, handleEnd);
       clearTimeout(timeoutID);
       setClasses(el, { [token]: false });
+      delete el.onion?.abort;
     }
-  }
+  });
 
   addEndListener(el, handleEnd);
 

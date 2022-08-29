@@ -4,12 +4,14 @@
   "source": "src/index.html",
   "scripts": {
     "start": "rimraf dist && parcel",
-    "build": "rimraf dist && parcel build"
+    "build": "rimraf dist && parcel build",
+    "serve": "pnpm build && serve dist --no-clipboard"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.7.0",
     "parcel": "^2.7.0",
-    "rimraf": "^3.0.2"
+    "rimraf": "^3.0.2",
+    "serve": "^14.0.1"
   },
   "dependencies": {
     "animate.css": "^4.1.1",

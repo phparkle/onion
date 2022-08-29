@@ -1,6 +1,6 @@
 interface OnionElement extends HTMLElement {
     onion?: {
-        abort: () => void;
+        abort?: () => void;
     };
 }
 declare function show(el: OnionElement, token?: string): void;

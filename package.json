@@ -20,12 +20,13 @@
   ],
   "scripts": {
     "build": "rimraf dist && microbundle",
-    "start": "rimraf dist && microbundle watch"
+    "start": "nodemon --exec \"pnpm build\" --watch src -e js,ts,json"
   },
   "author": "Parkle Lee <phparkle@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "microbundle": "^0.15.1",
+    "nodemon": "^2.0.19",
     "rimraf": "^3.0.2"
   }
 }
