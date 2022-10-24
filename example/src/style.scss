@@ -14,30 +14,30 @@
   font-size: 24px;  
   display: none;
 
-  &.is-open {
-    display: block;
-  }
+  // &.is-open {
+  //   display: block;
+  // }
 
-  &--transition {
-    transition: all 0.7s ease-out;
-    opacity: 0;
+  // &--transition {
+  //   transition: all 0.7s ease-out;
+  //   opacity: 0;
 
-    &.is-opening {
-      opacity: 1;
-    }  
-  }
+  //   &.is-opening {
+  //     opacity: 1;
+  //   }  
+  // }
 
-  &--animation {
-    opacity: 0;
+  // &--animation {
+  //   opacity: 0;
 
-    &.is-opening {
-      animation: fade-in 0.7s ease-out forwards;
-    }
+  //   &.is-opening {
+  //     animation: fade-in 0.7s ease-out forwards;
+  //   }
 
-    &.is-closing {
-      animation: fade-out 0.7s ease-out;
-    }
-  }
+  //   &.is-closing {
+  //     animation: fade-out 0.7s ease-out;
+  //   }
+  // }
 
   &__content {
     padding: 20px;

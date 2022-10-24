@@ -36,7 +36,7 @@ function show(el: OnionElement, token: string = "") {
     token = "";
 
   const handleEnd = (event?: Event) => {
-    if (event?.target !== el) return;
+    if (event && event.target !== el) return;
 
     setClasses(el, {
       "is-open": true,
@@ -87,7 +87,7 @@ function hide(el: OnionElement, token: string = "") {
     token = "";
 
   const handleEnd = (event?: Event) => {
-    if (event?.target !== el) return;
+    if (event && event.target !== el) return;
 
     setClasses(el, {
       "is-open": false,
